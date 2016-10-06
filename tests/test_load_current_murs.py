@@ -23,8 +23,8 @@ def test_parse_statutory_citations_with_reclassifications():
         "https://api.fdsys.gov/link?collection=uscode&year=mostrecent&link-type=html&title=52&section=30101"]
 
 def test_parse_statutory_citations_no_reclassifications():
-    assert parse_statutory_citations("30101", 1, 2) == [
-        "https://api.fdsys.gov/link?collection=uscode&year=mostrecent&link-type=html&title=52&section=30101"]
+    assert parse_statutory_citations("9999", 1, 2) == [
+        "https://api.fdsys.gov/link?collection=uscode&year=mostrecent&link-type=html&title=2&section=9999"]
 
 def assert_es_index_call(call_args, expected_mur):
     index, doc_type, mur = call_args[0]
