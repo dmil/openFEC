@@ -147,6 +147,7 @@ ie as (
         sum(independent_expenditures_period) as receipts,
         sum(independent_contributions_period) as disbursements
     from ofec_reports_ie_only_mv_tmp
+    where is_amended = False
     group by
         month,
         year
