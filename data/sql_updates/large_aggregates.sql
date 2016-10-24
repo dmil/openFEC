@@ -208,6 +208,7 @@ select
     year::numeric + (year::numeric % 2) as cycle,
     combined.*
 from combined
+where year <= to_char(now(),'YYYY')::numeric
 ;
 
 -- creates cumulative table per cycle from the data receipts in the large aggregates
